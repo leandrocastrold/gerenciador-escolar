@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+<head th:replace="fragments :: head('Editar aluno')"></head>
+<body>
+<div th:insert="fragments :: header"></div>
+
+<main>
+    <div th:insert="\admin\fragments :: sidebar"></div>
+    <div th:replace="\students\fragments :: student-form('Editar aluno', '/admin/alunos/editar')"></div>
+<!--    <div class="container mt-5">-->
+<!--        <h1>Cadastro de Alunos</h1>-->
+<!--        <form th:object="${studentDto}" action="/admin/cadastro-aluno" method="post">-->
+<!--            <div class="mb-3">-->
+<!--                <label for="nome" class="form-label">Nome</label>-->
+<!--                <input type="text" class="form-control" th:field="*{name}">-->
+<!--            </div>-->
+<!--            <div class="mb-3">-->
+<!--                <label for="age" class="form-label">Idade</label>-->
+<!--                <input type="number" class="form-control" th:field="*{age}">-->
+<!--            </div>-->
+<!--            <div class="mb-3">-->
+<!--                <label for="age" class="form-label">Nível</label>-->
+<!--                <select class="form-select" th:field="*{levelStudent}">-->
+<!--                    <option th:each="level : ${levelStudentList}" th:value="${level}" th:text="${level}">OPTION</option>-->
+<!--                </select>-->
+<!--            </div>-->
+
+<!--            <div class="mb-3">-->
+<!--                <label for="age" class="form-label">Turma</label>-->
+<!--                <select class="form-select" th:field="*{courseClassId}">-->
+<!--                    <option th:each="class : ${courseClasses}" th:value="${class.id}" th:text="${class.name}">OPTION-->
+<!--                    </option>-->
+<!--                </select>-->
+<!--            </div>-->
+<!--            <div>-->
+<!--                <button type="submit" class="btn btn-primary">Salvar</button>-->
+<!--            </div>-->
+<!--        </form>-->
+<!--    </div>-->
+
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
+        crossorigin="anonymous"></script>
+</body>
+</html>

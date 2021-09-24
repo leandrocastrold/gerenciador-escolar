@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head th:replace="fragments :: head('Página principal')"></head>
+<body>
+<div th:insert="fragments :: header"></div>
+
+<main>
+    <div th:insert="\students\fragments :: sidebar"></div>
+    <div class="container mt-5">
+        <div class="container" sec:authorize="isAuthenticated()">
+            authorize - authenticated
+        </div>
+
+        <ul>
+            <li sec:authorize="isAnonymous()"><a class="nav-link" href="/login">Login</a></li>
+            <li sec:authorize="isAuthenticated()"><a class="nav-link" href="/logout">Logout</a></li>
+            <li sec:authorize="isAuthenticated()">Wellcome, <span sec:authentication="authorities"></span></li>
+        </ul>
+
+        <h3>Avisos</h3>
+            <div class="board">
+                Não há avisos no momento
+            </div>
+        </div>
+    </div>
+</main>

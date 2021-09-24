@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+<head th:replace="fragments :: head('Lista de Estudantes')"></head>
+<body>
+<div th:insert="fragments :: header"></div>
+
+<main>
+    <div th:insert="\admin\fragments :: sidebar"></div>
+    <div class="container mt-3">
+        <h2>Alunos Cadastrados</h2>
+
+        <table th:object="${students}" class="table mt-5">
+            <thead>
+            <tr>
+                <th scope="col">Nome</th>
+                <th scope="col">Idade</th>
+                <th scope="col">Nível</th>
+                <th scope="col">Turma</th>
+                <th scope="col">Ações</th>
+            </tr>
+            </thead>
+            <tbody>
+            <div th:each=" student : ${students}">
+                <tr >
+                    <td scope="row" th:text="${student.name}">NOME</td>
+                    <td scope="row" th:text="${student.age}">IDADE</td>
+                    <td scope="row" th:text="${student.levelStudent}">NIVEL</td>
+                    <td scope="row"
+                        th:text="${student.courseClass} != null ? ${student.courseClass.name} : 'Sem turma associada' ">
+                        TURMA
+                    </td>
+                    <td>
+                        <a th:href="@{/admin/alunos/editar/{id}(id=${student.id})}" type="button"
+                           class="btn btn-success btn-sm">Editar ✎</a>
+                        <a type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal"
+                           th:attr="data-bs-target='#exampleModal'+${student.id}">Excluir
+                            🗑</a>
+                    </td>
+                </tr>
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                     th:id="'exampleModal'+${student.id}"
+                     aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Exclusão de Registro</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                Deseja realmente apagar aluno?
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                                <a th:href="@{alunos/{id}/excluir(id=${student.id})}" type="button"
+                                   class="btn btn-primary">Apagar</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            </tbody>
+
+        </table>
+    </div>
+
+</main>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
+        crossorigin="anonymous"></script>
+</body>
+</html>

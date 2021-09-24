@@ -1,0 +1,16 @@
+<div class="container mt-3" th:fragment="form(title, action)">
+    <h1>Cadastro de Disciplinas</h1>
+    <form th:object="${subjectDto}" action="/admin/disciplinas/cadastro" method="post">
+        <div class="mb-3">
+            <input type="hidden" th:field="*{id}">
+            <label for="name" class="form-label">Nome</label>
+            <input type="text" class="form-control" th:field="*{name}" required>
+        </div>
+        <div class="mb-3">
+            <label for="duration" class="form-label">Carga Horária</label>
+            <input type="number" class="form-control" th:field="*{duration}" required/>
+        </div>
+        <button type="submit" class="btn btn-primary">Salvar</button>
+    </form>
+
+</div>
