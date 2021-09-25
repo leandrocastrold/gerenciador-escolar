@@ -5,7 +5,7 @@
 <div th:replace="fragments :: header"></div>
 
 <main>
-    <div th:replace="\admin\fragments :: sidebar"></div>
+    <div th:replace="admin\fragments :: sidebar"></div>
     <div class="container mt-3  roll">
         <h2>Disciplinas Cadastradas</h2>
         <div th:object="${subjects}" th:each="subject : ${subjects}" class=" mt-5 border border-secondary p-3">
@@ -37,7 +37,7 @@
 
                 <div th:unless="${subject.teachers == null or subject.teachers.empty}">
                     <tr th:each=" teacher : ${subject.teachers}">
-                        <td scope="row" th:text="${teacher.name}">NOME</td>
+                        <td scope="row" th:text="${teacher} != null ? ${teacher.name} : 'Nenhum professor associado' ">NOME</td>
                     </tr>
                 </div>
 

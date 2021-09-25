@@ -12,7 +12,7 @@ public class AdminController {
 
     @GetMapping()
     public ModelAndView index() {
-        ModelAndView mv = new ModelAndView("/admin/index");
+        ModelAndView mv = new ModelAndView("admin/index");
         return mv;
     }
 //

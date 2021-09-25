@@ -34,7 +34,7 @@ public class CourseClassController {
     @GetMapping("/cadastro")
     public ModelAndView classRegister(CourseClassCreationDto courseClassCreationDto) {
         List<CourseSubject> registeredSubjects = subjectService.get();
-        ModelAndView mv = new ModelAndView("/courseclasses/classform");
+        ModelAndView mv = new ModelAndView("courseclasses/classform");
         mv.addObject("registeredSubjects", registeredSubjects);
         return mv;
     }
@@ -52,7 +52,7 @@ public class CourseClassController {
     @GetMapping("/{id}/editar")
     public ModelAndView editClass(@PathVariable String id) {
         List<CourseSubject> registeredSubjects = subjectService.get();
-        ModelAndView mv = new ModelAndView("/courseclasses/edit");
+        ModelAndView mv = new ModelAndView("courseclasses/edit");
         CourseClass courseClass = courseClassService.getById(id);
         CourseClassCreationDto courseClassCreationDto = new CourseClassCreationDto();
         BeanUtils.copyProperties(courseClass, courseClassCreationDto);

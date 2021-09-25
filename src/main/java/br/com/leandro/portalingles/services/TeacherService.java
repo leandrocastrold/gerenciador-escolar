@@ -89,11 +89,11 @@ public class TeacherService {
     public void delete(String id) {
         Optional<Teacher> teacher = teacherRepository.findById(id);
         if (teacher.isPresent()) {
+
             teacherRepository.delete(teacher.get());
         } else {
             throw new IllegalArgumentException("Id inválido");
         }
     }
-
 
 }

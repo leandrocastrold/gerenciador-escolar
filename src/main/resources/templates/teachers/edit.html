@@ -5,8 +5,8 @@
 <div th:insert="fragments :: header"></div>
 
 <main>
-  <div th:insert="\admin\fragments :: sidebar"></div>
-  <div th:replace="\teachers\fragments :: form('Editar Professor', '/admin/professores/editar')"></div>
+  <div th:insert="admin\fragments :: sidebar"></div>
+  <div th:replace="teachers\fragments :: form('Editar Professor', '/admin/professores/editar')"></div>
 </main>
 </body>
 </html>

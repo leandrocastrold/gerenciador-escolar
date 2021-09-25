@@ -5,7 +5,7 @@
 <div th:insert="fragments :: header"></div>
 
 <main>
-    <div th:insert="\admin\fragments :: sidebar"></div>
+    <div th:insert="admin\fragments :: sidebar"></div>
     <div class="container mt-3">
         <h2>Turmas Cadastradas</h2>
         <div th:object="${courseClasses}" class="mt-5 border border-secondary p-3 " th:each="classe : ${courseClasses}">
@@ -44,7 +44,7 @@
                     </tr>
                 </div>
 
-                <div th:unless="${classe.courseSubjectList.empty or classe.courseSubjectList.empty != null }">
+                <div th:unless="${classe.courseSubjectList.empty or classe.courseSubjectList == null }">
                     <tr th:each=" subject : ${classe.courseSubjectList}">
                         <td scope="row" th:text="${subject.name}">
                         </td>

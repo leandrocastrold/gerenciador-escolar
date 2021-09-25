@@ -30,7 +30,7 @@ public class SubjectController {
 
     @GetMapping("/cadastro")
     public ModelAndView subjectRegister(SubjectDto subjectDto) {
-        ModelAndView mv = new ModelAndView("/subjects/subjectform");
+        ModelAndView mv = new ModelAndView("subjects/subjectform");
 
         return mv;
     }
@@ -50,7 +50,7 @@ public class SubjectController {
      CourseSubject courseSubject = subjectService.getById(id);
      SubjectDto subjectDto = new SubjectDto();
      BeanUtils.copyProperties(courseSubject, subjectDto);
-     ModelAndView mv = new ModelAndView("/subjects/edit");
+     ModelAndView mv = new ModelAndView("subjects/edit");
      mv.addObject(subjectDto);
      return mv;
     }

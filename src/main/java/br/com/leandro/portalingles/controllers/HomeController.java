@@ -10,13 +10,18 @@ import org.springframework.web.servlet.ModelAndView;
 public class HomeController {
 
 
-    @GetMapping
+    @GetMapping("/")
     public ModelAndView index() {
-        return new ModelAndView("/index");
+        return new ModelAndView("index");
     }
 
     @GetMapping("/login")
     public ModelAndView login() {
         return new ModelAndView("login");
+    }
+
+    @GetMapping("/denied")
+    public ModelAndView denied() {
+        return new ModelAndView("accessdenied");
     }
 }

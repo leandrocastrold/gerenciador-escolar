@@ -53,7 +53,7 @@ public class TeacherController {
     public ModelAndView editform(@PathVariable String id){
         TeacherDto teacherDto = teacherService.getById(id);
         List<CourseSubject> subjectList = subjectService.get();
-        ModelAndView mv = new ModelAndView("/teachers/edit");
+        ModelAndView mv = new ModelAndView("teachers/edit");
         mv.addObject(teacherDto);
         mv.addObject("subjectList", subjectList);
         return mv;

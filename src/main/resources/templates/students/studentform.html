@@ -5,8 +5,8 @@
 <div th:insert="fragments :: header"></div>
 
 <main>
-    <div th:insert="\admin\fragments :: sidebar"></div>
-    <div th:replace="\students\fragments :: student-form('Cadastrar aluno', '/admin/alunos/cadastro')"></div>
+    <div th:insert="admin\fragments :: sidebar"></div>
+    <div th:replace="students\fragments :: student-form('Cadastrar aluno', '/admin/alunos/cadastro')"></div>
 <!--    <div class="container mt-5">-->
 <!--        <h1>Cadastro de Alunos</h1>-->
 <!--        <form th:object="${studentDto}" action="/admin/cadastro-aluno" method="post">-->

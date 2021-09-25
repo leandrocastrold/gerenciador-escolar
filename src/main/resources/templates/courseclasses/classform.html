@@ -5,8 +5,8 @@
 <div th:insert="fragments :: header"></div>
 
 <main>
-    <div th:insert="\admin\fragments :: sidebar"></div>
-    <div th:replace="\courseclasses\fragments :: form('Cadastrar Turma','/admin/turmas/cadastro')"></div>
+    <div th:insert="admin\fragments :: sidebar"></div>
+    <div th:replace="courseclasses\fragments :: form('Cadastrar Turma','/admin/turmas/cadastro')"></div>
 
 </main>
 

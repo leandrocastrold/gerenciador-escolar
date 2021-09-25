@@ -21,17 +21,16 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth.inMemoryAuthentication()
-                .withUser("admin").password("{noop}lcl@123").roles("ADMIN");
+                .withUser("admin").password("admin").roles("ADMIN");
     }
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
                 .antMatchers(HttpMethod.GET, "/").permitAll()
-                .antMatchers(HttpMethod.GET, "/admin").hasRole("ADMIN")
-                .antMatchers(HttpMethod.POST, "/admin").hasRole("ADMIN")
                 .anyRequest().authenticated().and().formLogin().loginPage("/login").permitAll()
                 .defaultSuccessUrl("/admin", true).failureForwardUrl("/")
-                .and().logout().logoutRequestMatcher(new AntPathRequestMatcher("/logout")).logoutSuccessUrl("/");
+                .and().logout().logoutRequestMatcher(new AntPathRequestMatcher("/logout")).logoutSuccessUrl("/")
+                .and().exceptionHandling().accessDeniedPage("/denied");
     }
 }

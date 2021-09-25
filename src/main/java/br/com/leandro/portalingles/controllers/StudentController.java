@@ -38,7 +38,7 @@ public class StudentController {
     @GetMapping("/cadastro")
     public ModelAndView studentRegister(StudentDto studentDto) {
         List<CourseClass> courseClasses = courseClassService.get();
-        ModelAndView mv = new ModelAndView("/students/studentform");
+        ModelAndView mv = new ModelAndView("students/studentform");
         mv.addObject("levelStudentList", LevelStudent.values());
         mv.addObject("courseClasses", courseClasses);
         return mv;
@@ -60,7 +60,7 @@ public class StudentController {
     @GetMapping("/editar/{id}")
     public ModelAndView editStudent(@PathVariable String id) {
         List<CourseClass> courseClasses = courseClassService.get();
-        ModelAndView mv = new ModelAndView("/students/studentedit");
+        ModelAndView mv = new ModelAndView("students/studentedit");
         mv.addObject("levelStudentList", LevelStudent.values());
         mv.addObject("courseClasses", courseClasses);
         Student studentToEdit = studentService.getById(id);

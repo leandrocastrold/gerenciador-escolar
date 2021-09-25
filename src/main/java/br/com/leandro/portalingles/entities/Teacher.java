@@ -12,7 +12,7 @@ public class Teacher {
     private String id;
     private String name;
     private Integer age;
-    @DBRef (lazy = true)
+    @DBRef (lazy = true )
     private List<CourseSubject> courseSubjectList;
 
     public Teacher() {

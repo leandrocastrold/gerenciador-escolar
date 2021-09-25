@@ -1,6 +1,6 @@
 <div class="container mt-3" th:fragment="form(title, action)">
-    <h1>Cadastro de Disciplinas</h1>
-    <form th:object="${subjectDto}" action="/admin/disciplinas/cadastro" method="post">
+    <h1 th:text="${title}">Cadastro de Disciplinas</h1>
+    <form th:object="${subjectDto}" th:action="@{${action}}" method="post">
         <div class="mb-3">
             <input type="hidden" th:field="*{id}">
             <label for="name" class="form-label">Nome</label>

@@ -6,7 +6,7 @@
 <div th:insert="fragments :: header"></div>
 
 <main>
-    <div th:insert="\students\fragments :: sidebar"></div>
+    <div th:insert="students\fragments :: sidebar"></div>
     <div class="container mt-5">
         <div class="container" sec:authorize="isAuthenticated()">
             authorize - authenticated
