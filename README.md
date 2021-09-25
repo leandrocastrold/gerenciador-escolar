@@ -1,7 +1,7 @@
 # Gerenciador escolar MVC, com Thymeleaf, MongoDB e Spring Security
 
 ## Projeto no Ar
-Clique AQUI pra acessar a versão em produção desse projeto. Foram utilizados o **AWS Beanstalk** (*deploy*) e banco de dados **MongoDB Atlas**. 
+Clique [**AQUI**](http://procolegio-env.eba-a9fgpr3p.us-west-2.elasticbeanstalk.com/) pra acessar a versão em produção desse projeto. Foram utilizados o **AWS Beanstalk** (*deploy*) e banco de dados **MongoDB Atlas**. 
 
 Esse projeto consiste em uma aplicação *MVC*, que utiliza **Thymeleaf** (*views*), autenticação com **Spring Security** e banco de dados *NoSQL* (**MongoDB**).
 
