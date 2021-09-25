@@ -1,0 +1,33 @@
+<div class="container mt-3" th:fragment="student-form(title, action)">
+    <h1 th:text="${title}">Cadastro de Alunos</h1>
+    <form th:object="${studentDto}" th:action="@{${action}}" method="post">
+        <div>
+            <input type="hidden" th:field="*{id}">
+        </div>
+        <div class="mb-3">
+            <label for="nome" class="form-label">Nome</label>
+            <input type="text" class="form-control" th:field="*{name}" required>
+        </div>
+        <div class="mb-3">
+            <label for="age" class="form-label">Idade</label>
+            <input type="number" class="form-control" th:field="*{age}" required>
+        </div>
+        <div class="mb-3">
+            <label for="age" class="form-label">Nível</label>
+            <select class="form-select" th:field="*{levelStudent}">
+                <option th:each="level : ${levelStudentList}" th:value="${level}" th:text="${level}">OPTION</option>
+            </select>
+        </div>
+
+        <div class="mb-3">
+            <label for="age" class="form-label">Turma</label>
+            <select class="form-select" th:field="*{courseClassId}" required>
+                <option th:each="class : ${courseClasses}" th:value="${class.id}" th:text="${class.name}">OPTION
+                </option>
+            </select>
+        </div>
+        <div>
+            <button type="submit" class="btn btn-primary">Salvar</button>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,125 @@
+<head th:fragment="head(titulo)">
+    <meta charset="UTF-8">
+    <title th:text="${titulo}">Title</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <link rel="stylesheet" href="/style/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
+</head>
+
+
+<header th:fragment="header" class=" navbar-dark bg-dark">
+    <div class="header-logo  ">
+        <h2><strong><a href="/">Pró-Colégio</a></strong> </h2>
+
+    </div>
+    <div class="icons-shortcut">
+
+    <div class="user-profile">
+        <span class="text-end" sec:authorize="isAuthenticated()">
+                <span >Autenticado como: <strong> <span sec:authentication="name"></span></strong></span>
+
+                <a href="/logout" class="btn btn-danger btn-sm mx-4"  type="button" >Sair</a>
+        </span>
+
+        <div class="user-profile" sec:authorize="!isAuthenticated()">
+            <a href="/admin" class="btn btn-success"  type="button" >Entrar</a>
+        </div>
+    </div>
+    </div>
+</header>
+
+
+
+
+<aside class="sidebar" th:fragment="sidebar">
+    <div class="buttons-container" >
+            <button class="btn btn-outline-secondary">Principal</button>
+            <button class="btn btn-outline-secondary">Mensagem</button>
+            <button class="btn btn-outline-secondary">Sair</button>
+    </div>
+</aside>
+
+
+<div th:fragment="btheader">
+    <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+        <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-dark text-decoration-none">
+            <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"></use></svg>
+        </a>
+
+        <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+            <li><a href="#" class="nav-link px-2 link-secondary">Overview</a></li>
+            <li><a href="#" class="nav-link px-2 link-dark">Inventory</a></li>
+            <li><a href="#" class="nav-link px-2 link-dark">Customers</a></li>
+            <li><a href="#" class="nav-link px-2 link-dark">Products</a></li>
+        </ul>
+
+        <div class="dropdown text-end">
+            <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+                <img src="https://github.com/mdo.png" alt="mdo" width="32" height="32" class="rounded-circle">
+            </a>
+            <ul class="dropdown-menu text-small" aria-labelledby="dropdownUser1" style="">
+                <li><a class="dropdown-item" href="#">New project...</a></li>
+                <li><a class="dropdown-item" href="#">Settings</a></li>
+                <li><a class="dropdown-item" href="#">Profile</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#">Sign out</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+<table class="table disciplinas-table">
+    <thead>
+    <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Nome</th>
+        <th scope="col">Professor</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <th scope="row">1</th>
+        <td>DISCIPLINA</td>
+    </tr>
+    </tbody>
+</table>
+
+
+<form th:fragment="mensagem-form">
+    <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+            Funcionário
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+            <li><a class="dropdown-item" href="#">Professor</a></li>
+            <li><a class="dropdown-item" href="#">Suporte</a></li>
+        </ul>
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+            Destinatário
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+            <li><a class="dropdown-item" href="#">Maria Antonieta</a></li>
+            <li><a class="dropdown-item" href="#">Nazaré Silva</a></li>
+        </ul>
+    </div>
+    <div class="mb-3">
+
+        <label for="exampleFormControlInput1" class="form-label">Assunto</label>
+        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+    </div>
+    <div class="mb-3">
+        <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+    </div>
+</form>
+
+
+
+
+
+
