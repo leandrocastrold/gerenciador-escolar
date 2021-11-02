@@ -1,5 +1,7 @@
 # Gerenciador escolar MVC, com Thymeleaf, MongoDB e Spring Security
 
+<img src="procolegio.gif" alt="" width=700 height=500>
+
 ## Projeto no Ar
 Clique [**AQUI**](http://procolegio-env.eba-a9fgpr3p.us-west-2.elasticbeanstalk.com/) pra acessar a versão em produção desse projeto. Foram utilizados o **AWS Beanstalk** (*deploy*) e banco de dados **MongoDB Atlas**. 
 
